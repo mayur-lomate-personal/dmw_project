@@ -1,0 +1,141 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/apple-icon.png">
+  <link rel="icon" type="image/png" href="{% static 'img/favicon.png'%}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.4/css/all.css">
+  <title>
+    Login
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <link href="{%static 'css/bootstrap.min.css'%}" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+      <link href="{%static 'css/now-ui-dashboard.css'%}" rel="stylesheet" />
+    <link href="{%static 'demo/demo.css'%}" rel="stylesheet" />
+    <script>
+function logi() {
+
+  var userid = document.forms["login"]["userid"].value;
+  var password = document.forms["login"]["password"].value;
+  if (userid != "robo" || password != "robo") {
+    alert("invalid userid and password");
+    return false;
+  }
+  return true;
+}
+</script>
+</head>
+
+<body class="">
+<div class="wrapper ">
+    <div class="sidebar" data-color="orange">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href="/" class="simple-text logo-mini">
+          SB
+        </a>
+        <a href="/" class="simple-text logo-normal">
+          Movie Recom.
+        </a>
+      </div>
+      <div class="sidebar-wrapper" id="sidebar-wrapper">
+        <ul class="nav">
+
+
+                  <li class="active ">
+                     <a href="./">
+                        <i class="now-ui-icons education_atom"></i>
+                        <p>Login</p>
+                     </a>
+                  </li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel" id="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="#pablo">Login</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" style="display:none">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+
+
+          </div>
+
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="panel-header panel-header-sm">
+      </div>
+        <div class="content">
+        <div class="row">
+          <div class="col-md-4"></div>
+            <div class="col-md-4">
+            <div class="card card-user">
+              <div class="card-header">
+                <h4 class="card-title"> Login</h4>
+              </div>
+              <form onsubmit="return logi()" name="login" action="./" method="post">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="" style="width:90%;padding-Left:10%">
+                      <div class="form-group">
+                        <label>userid</label>
+                        <input type="text" class="form-control" placeholder="userid" value="Swastik" name="userid">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="" style="width:90%;padding-Left:10%">
+                      <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="Password" value="475" name="password">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div  class="" style="width:100%;" align="center">
+                      <div class="form-group ">
+                          <input type="submit" class="btn btn-secondary" name="submit">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+            </div>
+          </div>
+
+
+        </div>
+
+        </div>
+        </div>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+      <script src="{% static 'js/core/jquery.min.js'%}"></script>
+      <script src="{% static 'js/core/bootstrap.min.js'%}"></script>
+      <script src="{% static 'js/core/popper.min.js'%}"></script>
+<script src="{% static 'js/plugins/perfect-scrollbar.jquery.min.js'%}"></script>
+<script src="{% static 'js/plugins/bootstrap-notify.js'%}"></script>
+<script src="{% static 'js/now-ui-dashboard.min.js'%}" type="text/javascript"></script>
+</body>
+</html>
